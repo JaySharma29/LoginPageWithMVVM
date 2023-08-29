@@ -7,6 +7,8 @@
 
 import UIKit
 import MaterialComponents
+import Alamofire
+import RxSwift
 
 class LoginViewController: UIViewController {
 
@@ -15,11 +17,65 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
     
+    private var loginViewModel: LoginViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginViewModel = LoginViewModel()
         configUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @IBAction func loginButtonTap(_ sender: UIButton) {
+        let email = (self.textFieldEmail.text ?? "")
+        let password = (self.textFieldPassword.text ?? "")
+        self.loginViewModel.validateEnteredDetail(email: email, password: password) { isSuccess, message in
+            if isSuccess {
+                // INdicator chalu krishu!!!!!
+                self.loginViewModel.apiForGetLoginData(email: email, password: password)
+            } else {
+                self.showAlert(strMessage: message, strActionTitle: "OK")
+            }
+        }
+    }
+    
+    @IBAction func closeButtonTap(_ sender: UIButton) {
+        self.pop()
+    }
+    
+//    func postRequestWithParameters(url: String, parameters: [String: Any]) -> Observable<LoginResponse> {
+//        return Observable.create { observer in
+//            let request = AF.request(url, method: .post, parameters: parameters)
+//                .responseJSON { response in
+//                    switch response.result {
+//                    case .success(let value):
+//                        observer.onNext(response)
+//                        observer.onCompleted()
+//                    case .failure(let error):
+//                        observer.onError(error)
+//                    }
+//                }
+//
+//            return Disposables.create {
+//                request.cancel()
+//            }
+//        }
+//    }
+    
+    
+}
+
+extension LoginViewController {
+    
     func configUI() {
         textFieldEmail.label.text = "Email"
         textFieldEmail.placeholder = "Email"
@@ -42,23 +98,5 @@ class LoginViewController: UIViewController {
         
         btnLogin.titleLabel?.textAlignment = .left
         btnLogin.setAttributedTitle( NSMutableAttributedString(string: "Login", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-    }
-    
-    @IBAction func loginButtonTap(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func closeButtonTap(_ sender: UIButton) {
-        self.pop()
     }
 }

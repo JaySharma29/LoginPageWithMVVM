@@ -28,4 +28,11 @@ extension UIViewController {
             self.navigationController?.popViewController(animated: animated)
         }
     }
+    
+    func showAlert(strTitle: String = "Error", strMessage: String, strActionTitle: String) {
+        let alertView = UIAlertController(title: strTitle, message: strMessage, preferredStyle: .alert)
+        let btnAction = UIAlertAction(title: strActionTitle, style: .cancel, handler: nil)
+        alertView.addAction(btnAction)
+        self.present(alertView, animated: true, completion: nil)
+    }
 }

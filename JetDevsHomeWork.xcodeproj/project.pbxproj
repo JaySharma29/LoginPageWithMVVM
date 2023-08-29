@@ -15,6 +15,8 @@
 		3A2217332A9DFA0600DB8D06 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2217322A9DFA0600DB8D06 /* UIViewController+Extension.swift */; };
 		3A2217352A9DFBCC00DB8D06 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2217342A9DFBCC00DB8D06 /* NSObject+Extension.swift */; };
 		3A2217382A9E0F5900DB8D06 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2217372A9E0F5900DB8D06 /* UIColor+Extension.swift */; };
+		3A22173A2A9E1A2F00DB8D06 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2217392A9E1A2F00DB8D06 /* LoginViewModel.swift */; };
+		3A22173D2A9E25FA00DB8D06 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22173C2A9E25FA00DB8D06 /* RequestObservable.swift */; };
 		3FDCDB94EA5D848A71DA8270 /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2403E1E5001F6FBE1E00 /* Pods_JetDevsHomeWork.framework */; };
 		4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BCD272B827F006E325E /* AppDelegate.swift */; };
 		4E677BD2272B827F006E325E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BD1272B827F006E325E /* ViewController.swift */; };
@@ -78,6 +80,8 @@
 		3A2217322A9DFA0600DB8D06 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3A2217342A9DFBCC00DB8D06 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		3A2217372A9E0F5900DB8D06 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		3A2217392A9E1A2F00DB8D06 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = JetDevsHomeWork/Login/ViewModel/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		3A22173C2A9E25FA00DB8D06 /* RequestObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObservable.swift; sourceTree = "<group>"; };
 		4E677BCA272B827F006E325E /* JetDevsHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetDevsHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E677BCD272B827F006E325E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E677BD1272B827F006E325E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,9 +160,9 @@
 		3A2217252A9DE47A00DB8D06 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3A22173B2A9E1A3C00DB8D06 /* ViewModel */,
 				3A22172D2A9DF06700DB8D06 /* Model */,
 				3A2217262A9DE48900DB8D06 /* Views */,
-				3A2217272A9DE49600DB8D06 /* ViewModel */,
 				3A2217282A9DE4A800DB8D06 /* ViewController */,
 			);
 			path = Login;
@@ -170,13 +174,6 @@
 				3A22172A2A9DE4E100DB8D06 /* LoginViewController.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3A2217272A9DE49600DB8D06 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3A2217282A9DE4A800DB8D06 /* ViewController */ = {
@@ -200,8 +197,17 @@
 			isa = PBXGroup;
 			children = (
 				3A2217372A9E0F5900DB8D06 /* UIColor+Extension.swift */,
+				3A22173C2A9E25FA00DB8D06 /* RequestObservable.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		3A22173B2A9E1A3C00DB8D06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A2217392A9E1A2F00DB8D06 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4E677BC1272B827F006E325E = {
@@ -704,8 +710,10 @@
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
 				4E677BD2272B827F006E325E /* ViewController.swift in Sources */,
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
+				3A22173A2A9E1A2F00DB8D06 /* LoginViewModel.swift in Sources */,
 				3A22172F2A9DF07E00DB8D06 /* LoginModel.swift in Sources */,
 				3A22172B2A9DE4E100DB8D06 /* LoginViewController.swift in Sources */,
+				3A22173D2A9E25FA00DB8D06 /* RequestObservable.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,
 				4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */,
 				3A2217382A9E0F5900DB8D06 /* UIColor+Extension.swift in Sources */,

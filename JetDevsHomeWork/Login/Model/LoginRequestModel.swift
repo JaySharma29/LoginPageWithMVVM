@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginRequestModel {
+struct LoginRequestModel: Codable {
     
     let email: String
     let password: String
