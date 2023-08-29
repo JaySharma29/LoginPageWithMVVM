@@ -23,7 +23,14 @@ class AccountViewController: UIViewController {
 		loginView.isHidden = true
     }
 	
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
 	@IBAction func loginButtonTap(_ sender: UIButton) {
+        let controller = LoginViewController.instantiateFromNib()
+        self.push(to: controller)
 	}
 	
 }
