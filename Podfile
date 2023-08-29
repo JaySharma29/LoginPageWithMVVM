@@ -7,6 +7,7 @@ target 'JetDevsHomeWork' do
   pod 'RxSwift', '~> 5.1.0'
   pod 'SwiftLint' , '~> 0.44.0'
   pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'IQKeyboardManagerSwift'
 #  pod 'Kingfisher'
 #  pod 'SnapKit'
 

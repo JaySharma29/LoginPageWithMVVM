@@ -1,4 +1,5 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.11)
   - MaterialComponents/AnimationTiming (124.2.0)
   - MaterialComponents/Availability (124.2.0)
   - MaterialComponents/private/Math (124.2.0)
@@ -33,23 +34,26 @@ PODS:
   - SwiftLint (0.44.0)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - "MaterialComponents/TextControls+OutlinedTextFields"
   - RxSwift (~> 5.1.0)
   - SwiftLint (~> 0.44.0)
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManagerSwift
     - MaterialComponents
     - MDFInternationalization
     - RxSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
 
-PODFILE CHECKSUM: 7a9838810583c8e598bb82214de00b0f89452c62
+PODFILE CHECKSUM: 179fd38c9ebf6842293a3daa8c5f41943f81a72a
 
 COCOAPODS: 1.12.0
