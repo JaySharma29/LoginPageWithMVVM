@@ -1,0 +1,20 @@
+PODS:
+  - RxSwift (5.1.3)
+  - SwiftLint (0.44.0)
+
+DEPENDENCIES:
+  - RxSwift (~> 5.1.0)
+  - SwiftLint (~> 0.44.0)
+
+SPEC REPOS:
+  trunk:
+    - RxSwift
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
+
+PODFILE CHECKSUM: 1274be118f5f68165350628d71dd4f7d5b82e584
+
+COCOAPODS: 1.12.0
