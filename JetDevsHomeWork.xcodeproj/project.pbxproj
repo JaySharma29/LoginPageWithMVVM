@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A06A62D80B0B42E8A3C43AA /* Pods_JetDevsHomeWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295154768C2A3A0D3FF48F99 /* Pods_JetDevsHomeWorkTests.framework */; };
+		3A22172B2A9DE4E100DB8D06 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2217292A9DE4E100DB8D06 /* LoginViewController.swift */; };
+		3A22172C2A9DE4E100DB8D06 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A22172A2A9DE4E100DB8D06 /* LoginViewController.xib */; };
+		3A22172F2A9DF07E00DB8D06 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22172E2A9DF07E00DB8D06 /* LoginModel.swift */; };
 		3FDCDB94EA5D848A71DA8270 /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2403E1E5001F6FBE1E00 /* Pods_JetDevsHomeWork.framework */; };
 		4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BCD272B827F006E325E /* AppDelegate.swift */; };
 		4E677BD2272B827F006E325E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BD1272B827F006E325E /* ViewController.swift */; };
@@ -64,6 +67,9 @@
 /* Begin PBXFileReference section */
 		1D3E2403E1E5001F6FBE1E00 /* Pods_JetDevsHomeWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		295154768C2A3A0D3FF48F99 /* Pods_JetDevsHomeWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2217292A9DE4E100DB8D06 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A22172A2A9DE4E100DB8D06 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3A22172E2A9DF07E00DB8D06 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		4E677BCA272B827F006E325E /* JetDevsHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetDevsHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E677BCD272B827F006E325E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E677BD1272B827F006E325E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +145,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A2217252A9DE47A00DB8D06 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3A22172D2A9DF06700DB8D06 /* Model */,
+				3A2217282A9DE4A800DB8D06 /* ViewController */,
+				3A2217272A9DE49600DB8D06 /* ViewModel */,
+				3A2217262A9DE48900DB8D06 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3A2217262A9DE48900DB8D06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A2217272A9DE49600DB8D06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A2217282A9DE4A800DB8D06 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A2217292A9DE4E100DB8D06 /* LoginViewController.swift */,
+				3A22172A2A9DE4E100DB8D06 /* LoginViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3A22172D2A9DF06700DB8D06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A22172E2A9DF07E00DB8D06 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4E677BC1272B827F006E325E = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +212,7 @@
 		4E677BCC272B827F006E325E /* JetDevsHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				3A2217252A9DE47A00DB8D06 /* Login */,
 				4E677C12272B860A006E325E /* Common */,
 				4E677C08272B83E4006E325E /* Login */,
 				4E677C01272B8367006E325E /* Account */,
@@ -501,6 +550,7 @@
 				4E677C3927322FA4006E325E /* Lato-Medium.ttf in Resources */,
 				4E677C3D27322FA4006E325E /* Lato-HeavyItalic.ttf in Resources */,
 				4E677C4127322FA4006E325E /* Lato-MediumItalic.ttf in Resources */,
+				3A22172C2A9DE4E100DB8D06 /* LoginViewController.xib in Resources */,
 				4E677BD7272B8282006E325E /* Assets.xcassets in Resources */,
 				4E677C4327322FA4006E325E /* Lato-Bold.ttf in Resources */,
 				4E677C19272B88A6006E325E /* HomeViewController.xib in Resources */,
@@ -664,6 +714,8 @@
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
 				4E677BD2272B827F006E325E /* ViewController.swift in Sources */,
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
+				3A22172F2A9DF07E00DB8D06 /* LoginModel.swift in Sources */,
+				3A22172B2A9DE4E100DB8D06 /* LoginViewController.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,
 				4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */,
 				4E677C18272B88A6006E325E /* HomeViewController.swift in Sources */,
