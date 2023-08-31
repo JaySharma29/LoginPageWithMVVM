@@ -22,8 +22,8 @@ extension URLRequest {
             .flatMap { url -> Observable<(response: HTTPURLResponse, data: Data)> in
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
-                let json: [String: Any] = [Login.email: loginDetails.email,
-                                           Login.password: loginDetails.password]
+                let json: [String: Any] = [LoginApiRequestKeys.email: loginDetails.email,
+                                           LoginApiRequestKeys.password: loginDetails.password]
                 
                 let jsonData = try? JSONSerialization.data(withJSONObject: json)
                 
@@ -35,14 +35,14 @@ extension URLRequest {
                     if T.self == LoginResponse.self {
                         let httpResponse = response
                         let headers = httpResponse.allHeaderFields
-                        for (key, value) in headers where (key as? String) == Login.xaccHeader {
-                            setValueInUserDefault(key: Login.xaccHeader, value: value)
+                        for (key, value) in headers where (key as? String) == UserdefaultKeys.xaccHeader.rawValue {
+                            setValueInUserDefault(key: UserdefaultKeys.xaccHeader.rawValue, value: value)
                         }
                     }
                     return try JSONDecoder().decode(T.self, from: data)
                 } else {
                     DispatchQueue.main.async {
-                        UIApplication.getTopViewController()?.showAlert(strMessage: "Something went wrong", strActionTitle: "OK")
+                        UIApplication.getTopViewController()?.showAlert(strMessage: CommonString.keySomethingWentWrong, strActionTitle: CommonString.keyOk)
                     }
                     throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
                 }

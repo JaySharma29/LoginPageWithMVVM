@@ -21,13 +21,10 @@ let tabbarSafeBottomMargin: CGFloat = isIPhoneX ? 34.0 : 0.0
 let tabBarHeight: CGFloat = isIPhoneX ? (tabBarTrueHeight+34.0) : tabBarTrueHeight
 let tabBarTrueHeight: CGFloat = 49.0
 
-struct Login {
-    
+struct LoginApiRequestKeys {
+
     static let email = "email"
     static let password = "password"
-    
-    static let xaccHeader = "X-Acc"
-    static let user = "User"
 }
 
 struct Account {

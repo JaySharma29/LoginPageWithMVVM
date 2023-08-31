@@ -21,6 +21,8 @@
 		3AF4C3DC2AA05E8200B76628 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3DB2AA05E8200B76628 /* CommonMethods.swift */; };
 		3AF4C3E02AA06DE300B76628 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3DF2AA06DE300B76628 /* UIApplication+Extensions.swift */; };
 		3AF4C3E32AA073BC00B76628 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3E22AA073BC00B76628 /* AccountViewModel.swift */; };
+		3AF4C3E52AA0835300B76628 /* UserdefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3E42AA0835300B76628 /* UserdefaultManager.swift */; };
+		3AF4C3ED2AA08E2D00B76628 /* LocalisationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3EC2AA08E2D00B76628 /* LocalisationKeys.swift */; };
 		3FDCDB94EA5D848A71DA8270 /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2403E1E5001F6FBE1E00 /* Pods_JetDevsHomeWork.framework */; };
 		4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BCD272B827F006E325E /* AppDelegate.swift */; };
 		4E677BD2272B827F006E325E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BD1272B827F006E325E /* ViewController.swift */; };
@@ -90,6 +92,8 @@
 		3AF4C3DB2AA05E8200B76628 /* CommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
 		3AF4C3DF2AA06DE300B76628 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		3AF4C3E22AA073BC00B76628 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		3AF4C3E42AA0835300B76628 /* UserdefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultManager.swift; sourceTree = "<group>"; };
+		3AF4C3EC2AA08E2D00B76628 /* LocalisationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisationKeys.swift; sourceTree = "<group>"; };
 		4E677BCA272B827F006E325E /* JetDevsHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetDevsHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E677BCD272B827F006E325E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E677BD1272B827F006E325E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +208,9 @@
 		3A2217362A9E0F4000DB8D06 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3AF4C3EB2AA08E0400B76628 /* Localisation */,
 				3AF4C3DB2AA05E8200B76628 /* CommonMethods.swift */,
+				3AF4C3E42AA0835300B76628 /* UserdefaultManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -232,6 +238,14 @@
 				3AF4C3E22AA073BC00B76628 /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AF4C3EB2AA08E0400B76628 /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				3AF4C3EC2AA08E2D00B76628 /* LocalisationKeys.swift */,
+			);
+			path = Localisation;
 			sourceTree = "<group>";
 		};
 		4E677BC1272B827F006E325E = {
@@ -348,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				4E677C0E272B8455006E325E /* AccountViewController.swift */,
-				4E677C0F272B8455006E325E /* AccountViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -356,6 +369,7 @@
 		4E677C07272B83DD006E325E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E677C0F272B8455006E325E /* AccountViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -730,6 +744,7 @@
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
 				3A2217332A9DFA0600DB8D06 /* UIViewController+Extension.swift in Sources */,
 				3AF4C3E02AA06DE300B76628 /* UIApplication+Extensions.swift in Sources */,
+				3AF4C3ED2AA08E2D00B76628 /* LocalisationKeys.swift in Sources */,
 				3A2217312A9DF2E700DB8D06 /* LoginRequestModel.swift in Sources */,
 				3AF4C3DC2AA05E8200B76628 /* CommonMethods.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
@@ -741,6 +756,7 @@
 				3A22172B2A9DE4E100DB8D06 /* LoginViewController.swift in Sources */,
 				3AF4C3DA2AA05D1100B76628 /* URLRequest+Extensions.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,
+				3AF4C3E52AA0835300B76628 /* UserdefaultManager.swift in Sources */,
 				4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */,
 				3A2217382A9E0F5900DB8D06 /* UIColor+Extension.swift in Sources */,
 				3AF4C3D82AA05CE300B76628 /* URL+Extensions.swift in Sources */,

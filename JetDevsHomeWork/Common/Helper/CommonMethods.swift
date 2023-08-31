@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-let userDefaults = UserDefaults.standard
-
 func daysBetweenDates(dateString: String) -> Int? {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = Account.dateFormatterForCreateAccount
@@ -21,32 +19,11 @@ func daysBetweenDates(dateString: String) -> Int? {
         let components = calendar.dateComponents([.day], from: date, to: currentDate)
         return components.day
     }
-    
     return nil
 }
 
-func setValueInUserDefault(key: String, value: Any) {
-    userDefaults.setValue(value, forKey: key)
-}
-
-func getValueFromUserDefault(key: String) -> Any {
-    userDefaults.value(forKey: key) as Any
-}
-
-func setCustomUserObjectInUserDefault(loginResponse: LoginResponse) {
-    let encoder = JSONEncoder()
-    if let encodedData = try? encoder.encode(loginResponse) {
-        // Save the data to UserDefaults
-        userDefaults.set(encodedData, forKey: Login.user)
-    }
-}
-
-func getCustomUserObjectInUserDefault() -> LoginResponse? {
-    if let savedData = userDefaults.data(forKey: Login.user) {
-        let decoder = JSONDecoder()
-        if let loadedUser = try? decoder.decode(LoginResponse.self, from: savedData) {
-            return loadedUser
-        }
-    }
-    return nil
+func isValidEmail(email: String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+    return emailTest.evaluate(with: email)
 }

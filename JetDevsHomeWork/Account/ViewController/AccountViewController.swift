@@ -46,8 +46,7 @@ extension AccountViewController {
     func configUI() {
         self.navigationController?.navigationBar.isHidden = true
         
-        // Fetch data from Userdefault
-        guard getValueFromUserDefault(key: Login.xaccHeader) is String else {
+        guard getValueFromUserDefault(key: UserdefaultKeys.xaccHeader.rawValue) is String else {
             nonLoginView.isHidden = false
             loginView.isHidden = true
             return
@@ -61,7 +60,6 @@ extension AccountViewController {
         
         self.accountViewModel = AccountViewModel(loginResponse: userDetail)
         
-        // Do any additional setup after loading the view.
         nonLoginView.isHidden = self.accountViewModel != nil
         loginView.isHidden = self.accountViewModel == nil
         
@@ -71,15 +69,15 @@ extension AccountViewController {
         self.headImageView.kf.setImage(with: urlImage)
         
         guard let userName = self.accountViewModel?.loginResponse?.data?.user?.userName else {
-            self.nameLabel.text = "N/A"
+            self.nameLabel.text = CommonString.keyNotAvailable
             return
         }
         self.nameLabel.text = userName
         
         guard let dateDays = self.accountViewModel?.loginResponse?.data?.user?.createdAt else {
-            self.daysLabel.text = "N/A"
+            self.daysLabel.text = CommonString.keyNotAvailable
             return
         }
-        self.daysLabel.text = "Created \(daysBetweenDates(dateString: dateDays) ?? 0) days ago"
+        self.daysLabel.text = "\(AccountScreenLocalizedString.keyCreated) \(daysBetweenDates(dateString: dateDays) ?? 0) \(AccountScreenLocalizedString.keyDaysAgo)"
     }
 }

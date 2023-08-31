@@ -40,7 +40,7 @@ class LoginViewModel: NSObject {
                         completion(loginResponseErrorMsg)
                     }
                 } else {
-                    completion("Something went wrong")
+                    completion(CommonString.keySomethingWentWrong)
                 }
             }).disposed(by: self.disposeBag)
     }
@@ -59,22 +59,16 @@ class LoginViewModel: NSObject {
     
     func validateEnteredDetail(loginDetail: LoginRequestModel, complition: @escaping ((Bool, String) -> Void)) {
         if loginDetail.email == "" || loginDetail.password == "" {
-            complition(false, "Email and password can not be blank")
-        } else if !self.isValidEmail(email: loginDetail.email) {
-            complition(false, "Invalid email id")
+            complition(false, LoginScreenValidationLocalizeString.keyEmailPasswordBlank)
+        } else if !isValidEmail(email: loginDetail.email) {
+            complition(false, LoginScreenValidationLocalizeString.keyInvalidEmail)
         } else if loginDetail.password.count <= 6 {
-            complition(false, "Password should be 6 digits long")
+            complition(false, LoginScreenValidationLocalizeString.keyPasswordLengthError)
         } else {
             complition(true, "")
         }
     }
  
-    func isValidEmail(email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: email)
-    }
-    
     func passValueToNextAccountScreen(controllerMain: UIViewController) {
         let controller = AccountViewController.instantiateFromNib()
         controllerMain.push(to: controller)

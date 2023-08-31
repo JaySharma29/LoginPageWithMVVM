@@ -83,13 +83,13 @@ class LoginViewController: UIViewController {
                 // INdicator chalu krishu!!!!!
                 self.loginViewModel.apiForGetLoginData(loginDetail: LoginRequestModel(email: email, password: password)) { errorResponse in
                     if !errorResponse.isEmpty {
-                        self.showAlert(strMessage: errorResponse, strActionTitle: "OK")
+                        self.showAlert(strMessage: errorResponse, strActionTitle: CommonString.keyOk)
                     } else {
                         self.loginViewModel.passValueToNextAccountScreen(controllerMain: self)
                     }
                 }
             } else {
-                self.showAlert(strMessage: message, strActionTitle: "OK")
+                self.showAlert(strMessage: message, strActionTitle: CommonString.keyOk)
             }
         }
     }
@@ -103,10 +103,10 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     func configUI() {
-        textFieldEmail.label.text = "Email"
-        textFieldEmail.placeholder = "Email"
-        textFieldPassword.label.text = "Password"
-        textFieldPassword.placeholder = "Password"
+        textFieldEmail.label.text = LoginScreenLocalizeString.keyEmail
+        textFieldEmail.placeholder = LoginScreenLocalizeString.keyEmail
+        textFieldPassword.label.text = LoginScreenLocalizeString.keyPassword
+        textFieldPassword.placeholder = LoginScreenLocalizeString.keyPassword
         textFieldEmail.layer.borderColor = JetDevHomeworkTheme.textFieldBorderColor.cgColor
         textFieldEmail.setOutlineColor(JetDevHomeworkTheme.textFieldBorderColor, for: .editing)
         textFieldEmail.setOutlineColor(JetDevHomeworkTheme.textFieldBorderColor, for: .disabled)
@@ -123,6 +123,6 @@ extension LoginViewController {
         paragraphStyle.lineHeightMultiple = 1.02
         
         btnLogin.titleLabel?.textAlignment = .left
-        btnLogin.setAttributedTitle( NSMutableAttributedString(string: "Login", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
+        btnLogin.setAttributedTitle( NSMutableAttributedString(string: LoginScreenLocalizeString.keyLogin, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
     }
 }
