@@ -8,11 +8,11 @@ The JetDevsHomeWork is a demonstration of a modern iOS application that incorpor
 
 ## Prerequisites
 
-|----------------|---------------|------------------|
+
 |      XCode     |     Swift     |    CocoaPods     | 
 |----------------|---------------|------------------|
 | 14.2 or higher | 5.0 or higher | 1.12.0 or higher |
-|----------------|---------------|------------------|
+
 
 ## Installation
 
