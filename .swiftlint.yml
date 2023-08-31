@@ -11,10 +11,8 @@ disabled_rules: # rule identifiers to exclude from running
   - control_statement # no rounded brackets around conditions. we would need this the other way around
   - todo # TODO can be written in the code but should be linked to a ticket on JIRA.
   - nesting # func nesting max 1 level
-  - prefer_structs_over_classes
   - function_parameter_count
   - trailing_whitespace
-  - single_line_body
 
 excluded: # paths to ignore during linting. overridden by `included`.
   - Carthage
@@ -120,3 +118,4 @@ custom_rules:
     regex: '(\?\?[^)]*$)'
     message: "Missing rounded brackets around ??"
     severity: warning
+reporter: "xcode"
