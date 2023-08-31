@@ -41,9 +41,6 @@ extension URLRequest {
                     }
                     return try JSONDecoder().decode(T.self, from: data)
                 } else {
-                    DispatchQueue.main.async {
-                        UIApplication.getTopViewController()?.showAlert(strMessage: CommonString.keySomethingWentWrong, strActionTitle: CommonString.keyOk)
-                    }
                     throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
                 }
             }

@@ -76,12 +76,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTap(_ sender: UIButton) {
-        self.activityIndicatorVisibility(isVisible: true)
+        self.view.endEditing(true)
         let email = (self.textFieldEmail.text ?? "")
         let password = (self.textFieldPassword.text ?? "")
         self.loginViewModel.validateEnteredDetail(loginDetail: LoginRequestModel(email: email, password: password)) { isSuccess, message in
             if isSuccess {
-                // INdicator chalu krishu!!!!!
                 self.activityIndicatorVisibility(isVisible: true)
                 self.loginViewModel.apiForGetLoginData(loginDetail: LoginRequestModel(email: email, password: password)) { [weak self] errorResponse in
                     guard let self = self else {
@@ -94,7 +93,9 @@ class LoginViewController: UIViewController {
                         self.loginViewModel.passValueToNextAccountScreen(controllerMain: self)
                     }
                 }
+                self.activityIndicatorVisibility(isVisible: false)
             } else {
+                self.activityIndicatorVisibility(isVisible: false)
                 self.showAlert(strMessage: message, strActionTitle: CommonString.keyOk)
             }
         }
