@@ -30,3 +30,7 @@ struct Login {
     static let user = "User"
 }
 
+struct Account {
+    
+    static let dateFormatterForCreateAccount = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+}

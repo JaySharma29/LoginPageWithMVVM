@@ -20,6 +20,7 @@
 		3AF4C3DA2AA05D1100B76628 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3D92AA05D1100B76628 /* URLRequest+Extensions.swift */; };
 		3AF4C3DC2AA05E8200B76628 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3DB2AA05E8200B76628 /* CommonMethods.swift */; };
 		3AF4C3E02AA06DE300B76628 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3DF2AA06DE300B76628 /* UIApplication+Extensions.swift */; };
+		3AF4C3E32AA073BC00B76628 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4C3E22AA073BC00B76628 /* AccountViewModel.swift */; };
 		3FDCDB94EA5D848A71DA8270 /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2403E1E5001F6FBE1E00 /* Pods_JetDevsHomeWork.framework */; };
 		4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BCD272B827F006E325E /* AppDelegate.swift */; };
 		4E677BD2272B827F006E325E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677BD1272B827F006E325E /* ViewController.swift */; };
@@ -88,6 +89,7 @@
 		3AF4C3D92AA05D1100B76628 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		3AF4C3DB2AA05E8200B76628 /* CommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
 		3AF4C3DF2AA06DE300B76628 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		3AF4C3E22AA073BC00B76628 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4E677BCA272B827F006E325E /* JetDevsHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetDevsHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E677BCD272B827F006E325E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E677BD1272B827F006E325E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 			path = URLRequest;
 			sourceTree = "<group>";
 		};
+		3AF4C3E12AA0739E00B76628 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3AF4C3E22AA073BC00B76628 /* AccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4E677BC1272B827F006E325E = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				4E677C07272B83DD006E325E /* Views */,
-				4E677C06272B83D5006E325E /* ViewModel */,
+				3AF4C3E12AA0739E00B76628 /* ViewModel */,
 				4E677C05272B83CA006E325E /* ViewController */,
 			);
 			path = Account;
@@ -341,13 +351,6 @@
 				4E677C0F272B8455006E325E /* AccountViewController.xib */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4E677C06272B83D5006E325E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4E677C07272B83DD006E325E /* Views */ = {
@@ -731,6 +734,7 @@
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
 				3A22173A2A9E1A2F00DB8D06 /* LoginViewModel.swift in Sources */,
 				3A22172F2A9DF07E00DB8D06 /* LoginModel.swift in Sources */,
+				3AF4C3E32AA073BC00B76628 /* AccountViewModel.swift in Sources */,
 				3A22172B2A9DE4E100DB8D06 /* LoginViewController.swift in Sources */,
 				3AF4C3DA2AA05D1100B76628 /* URLRequest+Extensions.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,

@@ -10,6 +10,21 @@ import UIKit
 
 let userDefaults = UserDefaults.standard
 
+func daysBetweenDates(dateString: String) -> Int? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = Account.dateFormatterForCreateAccount
+
+    if let date = dateFormatter.date(from: dateString) {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        
+        let components = calendar.dateComponents([.day], from: date, to: currentDate)
+        return components.day
+    }
+    
+    return nil
+}
+
 func setValueInUserDefault(key: String, value: Any) {
     userDefaults.setValue(value, forKey: key)
 }
@@ -35,4 +50,3 @@ func getCustomUserObjectInUserDefault() -> LoginResponse? {
     }
     return nil
 }
-
