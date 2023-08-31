@@ -9,7 +9,6 @@ target 'JetDevsHomeWork' do
   pod 'SwiftLint' , '~> 0.44.0'
   pod 'MaterialComponents/TextControls+OutlinedTextFields'
   pod 'IQKeyboardManagerSwift'
-  pod 'Alamofire'
 #  pod 'Kingfisher'
 #  pod 'SnapKit'
 

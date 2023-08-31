@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-        IQKeyboardManager.shared.enable = true
+        iqKeyboardManagerSetup()
 		window = UIWindow(frame: screenFrame)
 		window?.rootViewController = BaseTabBarController()
 
@@ -22,4 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		return true
 	}
+    
+    func iqKeyboardManagerSetup() {
+        IQKeyboardManager.shared.enable = true
+    }
+    
 }

@@ -6,27 +6,63 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class LoginViewModel: NSObject {
+    
+    let disposeBag = DisposeBag()
+    var loginResponse: Observable<LoginResponse>?
     
     override init() {
         super.init()
     }
     
-    func apiForGetLoginData(email: String, password: String) {
-        let result = APIClient.shared.sendPost(loginRequestModel: LoginRequestModel(email: email, password: password))
-        if let resultFound = result as? LoginResponse {
-            debugPrint(resultFound)
+    func apiForGetLoginData(loginDetail: LoginRequestModel, completion: @escaping (String) -> Void) {
+        guard let url = URL.baseURL() else {
+            return
         }
-        debugPrint(result)
+        
+        let resource = Resource<LoginResponse>(url: url)
+        let result = URLRequest.loginAPI(loginDetails: loginDetail, resource: resource)
+            .observeOn(MainScheduler.instance)
+        self.loginResponse = result
+        self.storeUserDataInLocal()
+        
+        result.map {$0.errorMessage}
+            .subscribe(onNext: { loginResponseErrorMsg in
+                if let loginResponseErrorMsg = loginResponseErrorMsg {
+                    if loginResponseErrorMsg.isEmpty {
+                        if self.loginResponse != nil {
+                            completion("")
+                        }
+                    } else {
+                        completion(loginResponseErrorMsg)
+                    }
+                } else {
+                    completion("Something went wrong")
+                }
+            }).disposed(by: self.disposeBag)
     }
 
-    func validateEnteredDetail(email: String, password: String, complition: @escaping ((Bool, String) -> Void)) {
-        if email == "" || password == "" {
+    func storeUserDataInLocal() {
+        guard let loginResponse = self.loginResponse else {
+            return
+        }
+        
+        loginResponse.map { $0 }
+            .subscribe(onNext: { loginObject in
+                setCustomUserObjectInUserDefault(loginResponse: loginObject)
+                
+            }).disposed(by: self.disposeBag)
+    }
+    
+    func validateEnteredDetail(loginDetail: LoginRequestModel, complition: @escaping ((Bool, String) -> Void)) {
+        if loginDetail.email == "" || loginDetail.password == "" {
             complition(false, "Email and password can not be blank")
-        } else if !self.isValidEmail(email: email) {
+        } else if !self.isValidEmail(email: loginDetail.email) {
             complition(false, "Invalid email id")
-        } else if password.count <= 6 {
+        } else if loginDetail.password.count <= 6 {
             complition(false, "Password should be 6 digits long")
         } else {
             complition(true, "")
@@ -39,4 +75,8 @@ class LoginViewModel: NSObject {
         return emailTest.evaluate(with: email)
     }
     
+    func passValueToNextAccountScreen(controllerMain: UIViewController) {
+        let controller = AccountViewController.instantiateFromNib()
+        controllerMain.push(to: controller)
+    }
 }

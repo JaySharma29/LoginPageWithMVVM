@@ -7,7 +7,6 @@
 
 import UIKit
 import MaterialComponents
-import Alamofire
 import RxSwift
 
 class LoginViewController: UIViewController {
@@ -19,8 +18,49 @@ class LoginViewController: UIViewController {
     
     private var loginViewModel: LoginViewModel!
     
+    var isLoginButtonEnable = false {
+        didSet {
+            if isLoginButtonEnable {
+                btnLogin.backgroundColor = JetDevHomeworkTheme.loginButtonSelectedState
+                btnLogin.isEnabled = true
+            } else {
+                btnLogin.backgroundColor = JetDevHomeworkTheme.loginButtonDisableState
+                btnLogin.isEnabled = false
+            }
+        }
+    }
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldEmail.text = "test@jetdevs.com"
+        textFieldPassword.text = "Jetdevs2021"
+        self.textFieldEmail.rx.controlEvent(.editingDidEnd)
+            .asObservable()
+            .map { self.textFieldEmail.text }
+            .subscribe(onNext: { email in
+                if let email = email {
+                    if !email.isEmpty && !(self.textFieldPassword.text ?? "").isEmpty {
+                        self.isLoginButtonEnable = true
+                    } else {
+                        self.isLoginButtonEnable = false
+                    }
+                }
+            }).disposed(by: disposeBag)
+        
+        self.textFieldPassword.rx.controlEvent(.editingDidEnd)
+            .asObservable()
+            .map { self.textFieldPassword.text }
+            .subscribe(onNext: { password in
+                if let password = password {
+                    if !password.isEmpty && !(self.textFieldEmail.text ?? "").isEmpty {
+                        self.isLoginButtonEnable = true
+                    } else {
+                        self.isLoginButtonEnable = false
+                    }
+                }
+            }).disposed(by: disposeBag)
+        
         loginViewModel = LoginViewModel()
         configUI()
     }
@@ -38,10 +78,16 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTap(_ sender: UIButton) {
         let email = (self.textFieldEmail.text ?? "")
         let password = (self.textFieldPassword.text ?? "")
-        self.loginViewModel.validateEnteredDetail(email: email, password: password) { isSuccess, message in
+        self.loginViewModel.validateEnteredDetail(loginDetail: LoginRequestModel(email: email, password: password)) { isSuccess, message in
             if isSuccess {
                 // INdicator chalu krishu!!!!!
-                self.loginViewModel.apiForGetLoginData(email: email, password: password)
+                self.loginViewModel.apiForGetLoginData(loginDetail: LoginRequestModel(email: email, password: password)) { errorResponse in
+                    if !errorResponse.isEmpty {
+                        self.showAlert(strMessage: errorResponse, strActionTitle: "OK")
+                    } else {
+                        self.loginViewModel.passValueToNextAccountScreen(controllerMain: self)
+                    }
+                }
             } else {
                 self.showAlert(strMessage: message, strActionTitle: "OK")
             }
@@ -51,26 +97,6 @@ class LoginViewController: UIViewController {
     @IBAction func closeButtonTap(_ sender: UIButton) {
         self.pop()
     }
-    
-//    func postRequestWithParameters(url: String, parameters: [String: Any]) -> Observable<LoginResponse> {
-//        return Observable.create { observer in
-//            let request = AF.request(url, method: .post, parameters: parameters)
-//                .responseJSON { response in
-//                    switch response.result {
-//                    case .success(let value):
-//                        observer.onNext(response)
-//                        observer.onCompleted()
-//                    case .failure(let error):
-//                        observer.onError(error)
-//                    }
-//                }
-//
-//            return Disposables.create {
-//                request.cancel()
-//            }
-//        }
-//    }
-    
     
 }
 
@@ -89,7 +115,7 @@ extension LoginViewController {
         textFieldPassword.setOutlineColor(JetDevHomeworkTheme.textFieldBorderColor, for: .disabled)
         textFieldPassword.setOutlineColor(JetDevHomeworkTheme.textFieldBorderColor, for: .normal)
         btnLogin.setTitleColor(JetDevHomeworkTheme.buttonTextColor, for: .normal)
-        btnLogin.backgroundColor = JetDevHomeworkTheme.loginButtonDisableState
+        self.isLoginButtonEnable = false
         btnLogin.titleLabel?.font = UIFont.latoSemiBoldFont(size: 18)
         btnLogin.layer.cornerRadius = 5
         btnLogin.clipsToBounds = true

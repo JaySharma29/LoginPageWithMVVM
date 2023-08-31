@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (5.6.4)
   - IQKeyboardManagerSwift (6.5.11)
   - MaterialComponents/AnimationTiming (124.2.0)
   - MaterialComponents/Availability (124.2.0)
@@ -40,7 +39,6 @@ PODS:
   - SwiftLint (0.44.0)
 
 DEPENDENCIES:
-  - Alamofire
   - IQKeyboardManagerSwift
   - "MaterialComponents/TextControls+OutlinedTextFields"
   - RxCocoa (~> 5.1.0)
@@ -49,7 +47,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - IQKeyboardManagerSwift
     - MaterialComponents
     - MDFInternationalization
@@ -59,7 +56,6 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
@@ -68,6 +64,6 @@ SPEC CHECKSUMS:
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
 
-PODFILE CHECKSUM: 32ed57ee6107aa4ac35a19f3b9ed9a44e68b05a8
+PODFILE CHECKSUM: 99299bbb637e322758ce08fdb841813eb6e86217
 
 COCOAPODS: 1.12.0
