@@ -1,5 +1,6 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.11)
+  - Kingfisher (7.9.1)
   - MaterialComponents/AnimationTiming (124.2.0)
   - MaterialComponents/Availability (124.2.0)
   - MaterialComponents/private/Math (124.2.0)
@@ -40,6 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - Kingfisher
   - "MaterialComponents/TextControls+OutlinedTextFields"
   - RxCocoa (~> 5.1.0)
   - RxSwift (~> 5.1.0)
@@ -48,6 +50,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
+    - Kingfisher
     - MaterialComponents
     - MDFInternationalization
     - RxCocoa
@@ -57,6 +60,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  Kingfisher: 1d14e9f59cbe19389f591c929000332bf70efd32
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
 
-PODFILE CHECKSUM: 99299bbb637e322758ce08fdb841813eb6e86217
+PODFILE CHECKSUM: 786822f556a3dabcba054081ac1b088627c95684
 
 COCOAPODS: 1.12.0
