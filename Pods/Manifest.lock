@@ -31,6 +31,11 @@ PODS:
     - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"
     - "MaterialComponents/TextControls+BaseTextFields"
   - MDFInternationalization (3.0.0)
+  - RxCocoa (5.1.3):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.3):
+    - RxSwift (~> 5)
   - RxSwift (5.1.3)
   - SwiftLint (0.44.0)
 
@@ -38,6 +43,7 @@ DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - "MaterialComponents/TextControls+OutlinedTextFields"
+  - RxCocoa (~> 5.1.0)
   - RxSwift (~> 5.1.0)
   - SwiftLint (~> 0.44.0)
 
@@ -47,6 +53,8 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - MaterialComponents
     - MDFInternationalization
+    - RxCocoa
+    - RxRelay
     - RxSwift
     - SwiftLint
 
@@ -55,9 +63,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
+  RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
+  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
 
-PODFILE CHECKSUM: 784bad02d33154203f0bb8b4fd9aacbc4d880006
+PODFILE CHECKSUM: 32ed57ee6107aa4ac35a19f3b9ed9a44e68b05a8
 
 COCOAPODS: 1.12.0
