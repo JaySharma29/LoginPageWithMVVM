@@ -52,9 +52,8 @@ This implementation encompasses the following aspects:
   |             SwiftLint           |     0.44.0     | A tool to enforce Swift style and conventions.              |
   |      IQKeyboardManagerSwift     |     6.5.11     | A library to manage keyboard behavior in iOS apps.          |
   |           Kingfisher            |     7.9.1      | A library for downloading and caching images from the web.  |
-  |  MaterialComponents/            |    124.2.0     | A suite of Material Design components for iOS.              |
-    TextControls+OutlinedTextFields                                                                             
-  
+  | TextControls+OutlinedTextFields |    124.2.0     | A suite of Material Design components for iOS.              |
+                                                                                 
 ## Contact
 
 If you have any questions or feedback, feel free to reach out to us at
