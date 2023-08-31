@@ -53,7 +53,7 @@ This implementation encompasses the following aspects:
   |      IQKeyboardManagerSwift     |     6.5.11     | A library to manage keyboard behavior in iOS apps.          |
   |           Kingfisher            |     7.9.1      | A library for downloading and caching images from the web.  |
   |  MaterialComponents/            |    124.2.0     | A suite of Material Design components for iOS.              |
-  | TextControls+OutlinedTextFields |                |                                                             |
+    TextControls+OutlinedTextFields                                                                             
   
 ## Contact
 
