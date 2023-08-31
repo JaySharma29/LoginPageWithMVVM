@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textFieldPassword: MDCOutlinedTextField!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var loginViewModel: LoginViewModel!
     
@@ -67,6 +68,7 @@ class LoginViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activityIndicator.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
     }
     
@@ -76,12 +78,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTap(_ sender: UIButton) {
+        self.activityIndicatorVisibility(isVisible: true)
         let email = (self.textFieldEmail.text ?? "")
         let password = (self.textFieldPassword.text ?? "")
         self.loginViewModel.validateEnteredDetail(loginDetail: LoginRequestModel(email: email, password: password)) { isSuccess, message in
             if isSuccess {
                 // INdicator chalu krishu!!!!!
-                self.loginViewModel.apiForGetLoginData(loginDetail: LoginRequestModel(email: email, password: password)) { errorResponse in
+                self.activityIndicatorVisibility(isVisible: true)
+                self.loginViewModel.apiForGetLoginData(loginDetail: LoginRequestModel(email: email, password: password)) { [weak self] errorResponse in
+                    guard let self = self else {
+                        return
+                    }
+                    self.activityIndicatorVisibility(isVisible: false)
                     if !errorResponse.isEmpty {
                         self.showAlert(strMessage: errorResponse, strActionTitle: CommonString.keyOk)
                     } else {
@@ -90,6 +98,22 @@ class LoginViewController: UIViewController {
                 }
             } else {
                 self.showAlert(strMessage: message, strActionTitle: CommonString.keyOk)
+            }
+        }
+    }
+    
+    func activityIndicatorVisibility(isVisible: Bool) {
+        DispatchQueue.main.async {
+            if #available(iOS 13.0, *) {
+                self.activityIndicator.style = .large
+            } else {
+                self.activityIndicator.style = .gray
+            }
+            self.activityIndicator.isHidden = !isVisible
+            if isVisible {
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -121,7 +145,6 @@ extension LoginViewController {
         btnLogin.clipsToBounds = true
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.02
-        
         btnLogin.titleLabel?.textAlignment = .left
         btnLogin.setAttributedTitle( NSMutableAttributedString(string: LoginScreenLocalizeString.keyLogin, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
     }

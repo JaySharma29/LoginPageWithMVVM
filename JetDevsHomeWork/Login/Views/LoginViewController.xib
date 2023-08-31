@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="JetDevsHomeWork" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="DQU-lX-h9X" id="Oyi-5j-Ltx"/>
                 <outlet property="btnClose" destination="oKV-fI-U7O" id="xsG-in-1GN"/>
                 <outlet property="btnLogin" destination="7ws-D8-cNR" id="EUp-Hw-8bW"/>
                 <outlet property="textFieldEmail" destination="sM3-4x-cLC" id="bzK-Np-JLr"/>
@@ -67,6 +68,10 @@
                         <action selector="loginButtonTap:" destination="-1" eventType="touchUpInside" id="SsG-qh-Hsd"/>
                     </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-lX-h9X">
+                    <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,7 +79,9 @@
                 <constraint firstItem="UJA-Rq-RrH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="0c6-dX-A2Q"/>
                 <constraint firstItem="oKV-fI-U7O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="3h9-s7-AcT"/>
                 <constraint firstItem="Tyd-Wl-cp6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7V2-dO-fIC"/>
+                <constraint firstItem="DQU-lX-h9X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EOA-WH-Igj"/>
                 <constraint firstItem="UJA-Rq-RrH" firstAttribute="top" secondItem="Tyd-Wl-cp6" secondAttribute="bottom" constant="75" id="IAI-HV-Dds"/>
+                <constraint firstItem="DQU-lX-h9X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mmz-F9-PHf"/>
                 <constraint firstItem="7ws-D8-cNR" firstAttribute="leading" secondItem="UJA-Rq-RrH" secondAttribute="leading" id="Vg6-kR-nJ3"/>
                 <constraint firstItem="7ws-D8-cNR" firstAttribute="top" secondItem="UJA-Rq-RrH" secondAttribute="bottom" constant="60" id="bqb-BT-sGT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UJA-Rq-RrH" secondAttribute="trailing" constant="25" id="dAc-Md-tdO"/>
