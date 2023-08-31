@@ -34,8 +34,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldEmail.text = "test@jetdevs.com"
-        textFieldPassword.text = "Jetdevs2021"
         self.textFieldEmail.rx.controlEvent(.editingDidEnd)
             .asObservable()
             .map { self.textFieldEmail.text }
